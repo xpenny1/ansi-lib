@@ -24,6 +24,27 @@ HVP='f'	 #Horizontal Vertical Position	Same as CUP, but counts as a format effec
 SGR='m'	 #Select Graphic Rendition	Sets colors and style of the characters following this code
 DSR='6n' #Device Status Report	Reports the cursor position (CPR) by transmitting ESC[n;mR, where n is the row and m is the column.
 
+#Extendet colors foreground/background
+ECF='38;5;'
+ECB='48;5;'
+#Standard colors
+Black=0
+Red=1
+Green=2
+Yellow=3
+Blue=4
+Magenta=5
+Cyan=6
+White=7
+Bright_Black=8
+Bright_Red=9
+Bright_Green=10
+Bright_Yellow=11
+Bright_Blue=12
+Bright_Magenta=13
+Bright_Cyan=14
+Bright_White=15
+
 readCursorPosition() {
     printf "\e[$DSR"
     read -s -n 1 -t $readWaitTime < /dev/tty
